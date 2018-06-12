@@ -314,7 +314,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) WibmoAnalyti
 ///
 /// \param appVersion appVersion
 ///
-+ (void)setupAnalyticsWithProductName:(NSString * _Nonnull)productName programName:(NSString * _Nonnull)programName bankId:(NSString * _Nonnull)bankId apiKey:(NSString * _Nonnull)apiKey apiUser:(NSString * _Nonnull)apiUser;
++ (void)setupAnalyticsWithProductName:(NSString * _Nullable)productName programName:(NSString * _Nullable)programName bankId:(NSString * _Nullable)bankId apiKey:(NSString * _Nullable)apiKey apiUser:(NSString * _Nullable)apiUser;
 /// Creates a new instance of AnalyticsEvent struct with productName, eventName and appInfo prepopulated
 /// \param eventName Unique name identifiying the event
 ///
