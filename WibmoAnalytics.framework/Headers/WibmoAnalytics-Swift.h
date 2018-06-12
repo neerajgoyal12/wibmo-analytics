@@ -243,7 +243,6 @@ SWIFT_CLASS("_TtC14WibmoAnalytics12CustomerInfo")
 @property (nonatomic, copy) NSString * _Null_unspecified customerEmail;
 @property (nonatomic, copy) NSString * _Null_unspecified customerMobile;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithId:(NSString * _Nullable)id name:(NSString * _Nullable)name email:(NSString * _Nullable)email mobile:(NSString * _Nullable)mobile OBJC_DESIGNATED_INITIALIZER SWIFT_DEPRECATED_OBJC("Swift initializer 'CustomerInfo.init(id:name:email:mobile:)' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
 @end
 
 
@@ -272,9 +271,6 @@ SWIFT_CLASS("_TtC14WibmoAnalytics12MerchantInfo")
 @end
 
 
-@interface NSManagedObjectContext (SWIFT_EXTENSION(WibmoAnalytics))
-- (BOOL)saveContextAndReturnError:(NSError * _Nullable * _Nullable)error SWIFT_DEPRECATED_OBJC("Swift method 'NSManagedObjectContext.saveContext()' uses '@objc' inference deprecated in Swift 4; add '@objc' to provide an Objective-C entrypoint");
-@end
 
 @class NSEntityDescription;
 
@@ -304,8 +300,8 @@ SWIFT_CLASS_NAMED("WAEvent")
 SWIFT_CLASS("_TtC14WibmoAnalytics14WibmoAnalytics")
 @interface WibmoAnalytics : NSObject
 /// Property to access public methods of sdk
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) WibmoAnalytics * _Nonnull manager;)
-+ (WibmoAnalytics * _Nonnull)manager SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) WibmoAnalytics * _Nullable manager;)
++ (WibmoAnalytics * _Nullable)manager SWIFT_WARN_UNUSED_RESULT;
 /// Invoke this method to initialise Analytics sdk before creating/pushing events
 /// <em>Warning</em>
 /// This method should be invoked only once with same product name else it will result in crash
@@ -318,19 +314,19 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) WibmoAnalyti
 ///
 /// \param appVersion appVersion
 ///
-+ (void)setupAnalyticsWithProgramName:(NSString * _Nonnull)programName bankId:(NSString * _Nonnull)bankId apiKey:(NSString * _Nonnull)apiKey apiUser:(NSString * _Nonnull)apiUser;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (void)setupAnalyticsWithProductName:(NSString * _Nonnull)productName programName:(NSString * _Nonnull)programName bankId:(NSString * _Nonnull)bankId apiKey:(NSString * _Nonnull)apiKey apiUser:(NSString * _Nonnull)apiUser;
 /// Creates a new instance of AnalyticsEvent struct with productName, eventName and appInfo prepopulated
 /// \param eventName Unique name identifiying the event
 ///
 ///
 /// returns:
 /// instance of AnalyticsEvent struct
-- (AnalyticsEvent * _Nonnull)createNewEventWithEventName:(NSString * _Nonnull)eventName SWIFT_WARN_UNUSED_RESULT;
+- (AnalyticsEvent * _Nullable)createNewEventWithEventName:(NSString * _Nonnull)eventName SWIFT_WARN_UNUSED_RESULT;
 /// Stores the event into local-store, later pushes to analytics server
 /// \param event event struct obtained from createNewEvent method, which has additional fields populated as required
 ///
 - (void)pushEventWithEvent:(AnalyticsEvent * _Nullable)event;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
 SWIFT_MODULE_NAMESPACE_POP
