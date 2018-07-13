@@ -303,8 +303,8 @@ SWIFT_CLASS_NAMED("WAEvent")
 SWIFT_CLASS("_TtC14WibmoAnalytics14WibmoAnalytics")
 @interface WibmoAnalytics : NSObject
 /// Property to access public methods of sdk
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) WibmoAnalytics * _Nonnull manager;)
-+ (WibmoAnalytics * _Nonnull)manager SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) WibmoAnalytics * _Nullable manager;)
++ (WibmoAnalytics * _Nullable)manager SWIFT_WARN_UNUSED_RESULT;
 /// Invoke this method to initialise Analytics sdk before creating/pushing events
 /// <em>Warning</em>
 /// This method should be invoked only once with same product name else it will result in crash
@@ -318,8 +318,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) WibmoAnalyti
 /// \param appVersion appVersion
 ///
 + (void)setupAnalyticsWithProductName:(NSString * _Nullable)productName programName:(NSString * _Nullable)programName bankId:(NSString * _Nullable)bankId apiKey:(NSString * _Nullable)apiKey apiUser:(NSString * _Nullable)apiUser buildEnv:(enum BuildEnv)buildEnv;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 /// Creates a new instance of AnalyticsEvent struct with productName, eventName and appInfo prepopulated
 /// \param eventName Unique name identifiying the event
 ///
