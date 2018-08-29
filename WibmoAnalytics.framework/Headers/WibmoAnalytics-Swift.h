@@ -212,6 +212,7 @@ SWIFT_CLASS("_TtC14WibmoAnalytics14AnalyticsEvent")
 @property (nonatomic, strong) NSNumber * _Nullable amount;
 @property (nonatomic, copy) NSString * _Null_unspecified currency;
 @property (nonatomic) BOOL status;
+@property (nonatomic, copy) NSString * _Nullable statusValue;
 @property (nonatomic) BOOL intermediate;
 @property (nonatomic, copy) NSString * _Null_unspecified extraKey1;
 @property (nonatomic, copy) NSString * _Null_unspecified extraKey2;
