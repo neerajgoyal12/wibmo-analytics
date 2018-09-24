@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'wibmo-analytics'
-  s.version          = '2.0.6'
+  s.version          = '2.1.0'
   s.summary          = 'WibmoAnalytics iOS SDK is helper framework for logging events to Wibmo Analytics server.'
 
 # This description is used to generate tags and improve search results.
